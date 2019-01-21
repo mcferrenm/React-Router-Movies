@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const MovieCard = ({ movie }) => {
-  const { title, director, metascore, stars } = movie;
+const MovieCard = props => {
+  const { title, director, metascore, stars } = props.movie;
   return (
     <div className="movie-card">
       <h2>{title}</h2>
@@ -19,6 +18,9 @@ const MovieCard = ({ movie }) => {
           {star}
         </div>
       ))}
+      <div className="save-button" onClick={props.saveMovie}>
+        Save
+      </div>
     </div>
   );
 };
